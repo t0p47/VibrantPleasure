@@ -55,6 +55,8 @@ class AutoModeFragment : Fragment(), FragmentInjectable {
         binding = DataBindingUtil.inflate(inflater, R.layout.auto_mode_fragment, container, false)
         viewModel = injectViewModel(viewModelFactory)
 
+        Log.d(LOG_TAG,"AutoModeFragment: onCreateView")
+
         vibrator = context?.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
 
         initAuto()
@@ -64,6 +66,8 @@ class AutoModeFragment : Fragment(), FragmentInjectable {
     }
 
     private fun initSeekbar(){
+
+        Log.d(LOG_TAG,"AutoModeFragment: initSeekbar")
 
         binding.seekBarVibroTime.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {

@@ -546,7 +546,7 @@ class AudioFragment : Fragment(), FragmentInjectable {
 
 }
 
-class PlaybackStateListener: Player.EventListener {
+class PlaybackStateListener: Player.Listener {
 
     override fun onPlayerStateChanged(playWhenReady: Boolean, playbackState: Int) {
         var stateString = ""
