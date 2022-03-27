@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="50dp">
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/layoutMusicScroll"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/bg_gradient"
+                app:layout_constraintBottom_toTopOf="@id/layoutPlayControl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/btnCicada"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="6dp"
+                        android:background="@drawable/audio_button_selector"
+                        android:src="@drawable/ic_cicada"
+                        android:text="Cicada"
+                        app:layout_constraintEnd_toStartOf="@id/btnRoofRain"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <!--<ImageView
+                        android:id="@+id/imgCicadaLock"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:src="@drawable/ic_lock"
+                        app:layout_constraintBottom_toBottomOf="@id/btnCicada"
+                        app:layout_constraintEnd_toEndOf="@id/btnCicada" />-->
+
+                    <ImageButton
+                        android:id="@+id/btnRoofRain"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="6dp"
+                        android:background="@drawable/audio_button_selector"
+                        android:src="@drawable/ic_rain_on_roof"
+                        android:text="RoofRain"
+                        app:layout_constraintEnd_toStartOf="@id/btnBirdOne"
+                        app:layout_constraintStart_toEndOf="@id/btnCicada"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageButton
+                        android:id="@+id/btnBirdOne"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/audio_button_selector"
+                        android:src="@drawable/ic_bird_one"
+                        android:text="Bird one"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/btnRoofRain"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <SeekBar
+                        android:id="@+id/sbCicada"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:max="100"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="6dp"
+                        android:progress="50"
+                        app:layout_constraintEnd_toEndOf="@id/btnCicada"
+                        app:layout_constraintStart_toStartOf="@id/btnCicada"
+                        app:layout_constraintTop_toBottomOf="@id/btnCicada" />
+
+                    <SeekBar
+                        android:id="@+id/sbRoofRain"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:max="100"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="6dp"
+                        android:progress="50"
+                        app:layout_constraintEnd_toEndOf="@id/btnRoofRain"
+                        app:layout_constraintStart_toStartOf="@id/btnRoofRain"
+                        app:layout_constraintTop_toBottomOf="@id/btnRoofRain" />
+
+                    <SeekBar
+                        android:id="@+id/sbBirdOne"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:max="100"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="6dp"
+                        android:progress="50"
+                        app:layout_constraintEnd_toEndOf="@id/btnBirdOne"
+                        app:layout_constraintStart_toStartOf="@id/btnBirdOne"
+                        app:layout_constraintTop_toBottomOf="@id/btnBirdOne" />
+
+                    <ImageButton
+                        android:id="@+id/btnVacuum"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="6dp"
+                        android:background="@drawable/audio_button_selector"
+                        android:src="@drawable/ic_vacuum"
+                        android:text="Vacuum"
+                        app:layout_constraintEnd_toStartOf="@id/btnFrog"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/sbCicada" />
+
+                    <ImageButton
+                        android:id="@+id/btnFrog"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="6dp"
+                        android:background="@drawable/audio_button_selector"
+                        android:src="@drawable/ic_frog"
+                        android:text="Frog"
+                        app:layout_constraintEnd_toStartOf="@id/btnTrain"
+                        app:layout_constraintStart_toEndOf="@id/btnVacuum"
+                        app:layout_constraintTop_toBottomOf="@id/sbRoofRain" />
+
+                    <ImageButton
+                        android:id="@+id/btnTrain"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/audio_button_selector"
+                        android:src="@drawable/ic_train"
+                        android:text="Train"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/btnFrog"
+                        app:layout_constraintTop_toBottomOf="@id/sbBirdOne" />
+
+                    <SeekBar
+                        android:id="@+id/sbVacuum"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:max="100"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="6dp"
+                        android:progress="50"
+                        app:layout_constraintEnd_toEndOf="@id/btnVacuum"
+                        app:layout_constraintStart_toStartOf="@id/btnVacuum"
+                        app:layout_constraintTop_toBottomOf="@+id/btnVacuum" />
+
+                    <SeekBar
+                        android:id="@+id/sbFrog"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:max="100"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="6dp"
+                        android:progress="50"
+                        app:layout_constraintEnd_toEndOf="@id/btnFrog"
+                        app:layout_constraintStart_toStartOf="@id/btnFrog"
+                        app:layout_constraintTop_toBottomOf="@+id/btnFrog" />
+
+                    <SeekBar
+                        android:id="@+id/sbTrain"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:max="100"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="6dp"
+                        android:progress="50"
+                        app:layout_constraintEnd_toEndOf="@id/btnTrain"
+                        app:layout_constraintStart_toStartOf="@id/btnTrain"
+                        app:layout_constraintTop_toBottomOf="@id/btnTrain" />
+
+
+                    <ImageButton
+                        android:id="@+id/btnAirplane"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="6dp"
+                        android:background="@drawable/audio_button_selector"
+                        android:src="@drawable/ic_airplane"
+                        android:text="Airplane"
+                        app:layout_constraintEnd_toStartOf="@id/btnBirdTwo"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/sbVacuum" />
+
+                    <ImageButton
+                        android:id="@+id/btnBirdTwo"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="6dp"
+                        android:background="@drawable/audio_button_selector"
+                        android:src="@drawable/ic_bird_two"
+                        android:text="BirdTwo"
+                        app:layout_constraintEnd_toStartOf="@id/btnBirdThree"
+                        app:layout_constraintStart_toEndOf="@id/btnAirplane"
+                        app:layout_constraintTop_toBottomOf="@id/sbFrog" />
+
+                    <ImageButton
+                        android:id="@+id/btnBirdThree"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/audio_button_selector"
+                        android:src="@drawable/ic_bird_three"
+                        android:text="BirdThree"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/btnBirdTwo"
+                        app:layout_constraintTop_toBottomOf="@id/sbTrain" />
+
+                    <SeekBar
+                        android:id="@+id/sbAirplane"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:max="100"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="6dp"
+                        android:progress="50"
+                        app:layout_constraintEnd_toEndOf="@+id/btnAirplane"
+                        app:layout_constraintStart_toStartOf="@+id/btnAirplane"
+                        app:layout_constraintTop_toBottomOf="@id/btnAirplane" />
+
+                    <SeekBar
+                        android:id="@+id/sbBirdTwo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:max="100"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="6dp"
+                        android:progress="50"
+                        app:layout_constraintEnd_toEndOf="@+id/btnBirdTwo"
+                        app:layout_constraintStart_toStartOf="@+id/btnBirdTwo"
+                        app:layout_constraintTop_toBottomOf="@id/btnBirdTwo" />
+
+                    <SeekBar
+                        android:id="@+id/sbBirdThree"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:max="100"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="6dp"
+                        android:progress="50"
+                        app:layout_constraintEnd_toEndOf="@+id/btnBirdThree"
+                        app:layout_constraintStart_toStartOf="@+id/btnBirdThree"
+                        app:layout_constraintTop_toBottomOf="@id/btnBirdThree" />
+
+                    <ImageButton
+                        android:id="@+id/btnCar"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="6dp"
+                        android:background="@drawable/audio_button_selector"
+                        android:src="@drawable/ic_car"
+                        android:text="Car"
+                        app:layout_constraintEnd_toStartOf="@id/btnWind"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/sbAirplane" />
+
+                    <ImageButton
+                        android:id="@+id/btnWind"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="6dp"
+                        android:background="@drawable/audio_button_selector"
+                        android:src="@drawable/ic_wind"
+                        android:text="Wind"
+                        app:layout_constraintEnd_toStartOf="@id/btnFan"
+                        app:layout_constraintStart_toEndOf="@id/btnCar"
+                        app:layout_constraintTop_toBottomOf="@id/sbBirdTwo" />
+
+                    <ImageButton
+                        android:id="@+id/btnFan"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/audio_button_selector"
+                        android:src="@drawable/ic_fan"
+                        android:text="Fan"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/btnWind"
+                        app:layout_constraintTop_toBottomOf="@id/sbBirdThree" />
+
+                    <SeekBar
+                        android:id="@+id/sbCar"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:max="100"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="6dp"
+                        android:progress="50"
+                        app:layout_constraintEnd_toEndOf="@+id/btnCar"
+                        app:layout_constraintStart_toStartOf="@+id/btnCar"
+                        app:layout_constraintTop_toBottomOf="@id/btnCar" />
+
+                    <SeekBar
+                        android:id="@+id/sbWind"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:max="100"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="6dp"
+                        android:progress="50"
+                        app:layout_constraintEnd_toEndOf="@+id/btnWind"
+                        app:layout_constraintStart_toStartOf="@+id/btnWind"
+                        app:layout_constraintTop_toBottomOf="@id/btnWind" />
+
+                    <SeekBar
+                        android:id="@+id/sbFan"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:max="100"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="6dp"
+                        android:progress="50"
+                        app:layout_constraintEnd_toEndOf="@+id/btnFan"
+                        app:layout_constraintStart_toStartOf="@+id/btnFan"
+                        app:layout_constraintTop_toBottomOf="@id/btnFan" />
+
+                    <ImageButton
+                        android:id="@+id/btnHairDryer"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="6dp"
+                        android:background="@drawable/audio_button_selector"
+                        android:src="@drawable/ic_hairdryer"
+                        android:text="HairDryer"
+                        app:layout_constraintEnd_toStartOf="@id/btnLightRain"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/sbCar" />
+
+                    <ImageButton
+                        android:id="@+id/btnLightRain"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="6dp"
+                        android:background="@drawable/audio_button_selector"
+                        android:src="@drawable/ic_light_rain"
+                        android:text="LightRain"
+                        app:layout_constraintEnd_toStartOf="@id/btnOcean"
+                        app:layout_constraintStart_toEndOf="@id/btnHairDryer"
+                        app:layout_constraintTop_toBottomOf="@id/sbWind" />
+
+                    <ImageButton
+                        android:id="@+id/btnOcean"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/audio_button_selector"
+                        android:src="@drawable/ic_waves"
+                        android:text="Ocean"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/btnLightRain"
+                        app:layout_constraintTop_toBottomOf="@id/sbFan" />
+
+                    <SeekBar
+                        android:id="@+id/sbHairDryer"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:max="100"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="6dp"
+                        android:progress="50"
+                        app:layout_constraintEnd_toEndOf="@+id/btnHairDryer"
+                        app:layout_constraintStart_toStartOf="@+id/btnHairDryer"
+                        app:layout_constraintTop_toBottomOf="@id/btnHairDryer" />
+
+                    <SeekBar
+                        android:id="@+id/sbLightRain"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:max="100"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="6dp"
+                        android:progress="50"
+                        app:layout_constraintEnd_toEndOf="@+id/btnLightRain"
+                        app:layout_constraintStart_toStartOf="@+id/btnLightRain"
+                        app:layout_constraintTop_toBottomOf="@id/btnLightRain" />
+
+                    <SeekBar
+                        android:id="@+id/sbOcean"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:max="100"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="6dp"
+                        android:progress="50"
+                        app:layout_constraintEnd_toEndOf="@id/btnOcean"
+                        app:layout_constraintStart_toStartOf="@id/btnOcean"
+                        app:layout_constraintTop_toBottomOf="@id/btnOcean" />
+
+                    <ImageButton
+                        android:id="@+id/btnOwl"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="6dp"
+                        android:background="@drawable/audio_button_selector"
+                        android:src="@drawable/ic_owl"
+                        android:text="Owl"
+                        app:layout_constraintEnd_toStartOf="@id/btnRainInForest"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/sbHairDryer" />
+
+                    <ImageButton
+                        android:id="@+id/btnRainInForest"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="6dp"
+                        android:background="@drawable/audio_button_selector"
+                        android:src="@drawable/ic_rain_in_forest"
+                        android:text="RainInForest"
+                        app:layout_constraintEnd_toStartOf="@id/btnRainOnWindow"
+                        app:layout_constraintStart_toEndOf="@id/btnOwl"
+                        app:layout_constraintTop_toBottomOf="@id/sbLightRain" />
+
+                    <ImageButton
+                        android:id="@+id/btnRainOnWindow"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/audio_button_selector"
+                        android:src="@drawable/ic_rain_on_window"
+                        android:text="RainInWindow"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/btnRainInForest"
+                        app:layout_constraintTop_toBottomOf="@id/sbOcean" />
+
+                    <SeekBar
+                        android:id="@+id/sbOwl"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:max="100"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="6dp"
+                        android:progress="50"
+                        app:layout_constraintEnd_toEndOf="@id/btnOwl"
+                        app:layout_constraintStart_toStartOf="@id/btnOwl"
+                        app:layout_constraintTop_toBottomOf="@id/btnOwl" />
+
+                    <SeekBar
+                        android:id="@+id/sbRainInForest"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:max="100"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="6dp"
+                        android:progress="50"
+                        app:layout_constraintEnd_toEndOf="@id/btnRainInForest"
+                        app:layout_constraintStart_toStartOf="@id/btnRainInForest"
+                        app:layout_constraintTop_toBottomOf="@id/btnRainInForest" />
+
+                    <SeekBar
+                        android:id="@+id/sbRainInWindow"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:max="100"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="6dp"
+                        android:progress="50"
+                        app:layout_constraintEnd_toEndOf="@id/btnRainOnWindow"
+                        app:layout_constraintStart_toStartOf="@id/btnRainOnWindow"
+                        app:layout_constraintTop_toBottomOf="@id/btnRainOnWindow" />
+
+                    <ImageButton
+                        android:id="@+id/btnSleet"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="6dp"
+                        android:background="@drawable/audio_button_selector"
+                        android:src="@drawable/ic_sleet"
+                        android:text="Sleet"
+                        app:layout_constraintEnd_toStartOf="@id/btnStream"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/sbOwl" />
+
+                    <ImageButton
+                        android:id="@+id/btnStream"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="6dp"
+                        android:background="@drawable/audio_button_selector"
+                        android:src="@drawable/ic_stream"
+                        android:text="Strean"
+                        app:layout_constraintEnd_toStartOf="@id/btnThunder"
+                        app:layout_constraintStart_toEndOf="@id/btnSleet"
+                        app:layout_constraintTop_toBottomOf="@id/sbRainInForest" />
+
+                    <ImageButton
+                        android:id="@+id/btnThunder"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/audio_button_selector"
+                        android:src="@drawable/ic_thunder"
+                        android:text="Thunder"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/btnStream"
+                        app:layout_constraintTop_toBottomOf="@id/sbRainInWindow" />
+
+                    <SeekBar
+                        android:id="@+id/sbSleet"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:max="100"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="6dp"
+                        android:progress="50"
+                        app:layout_constraintEnd_toEndOf="@id/btnSleet"
+                        app:layout_constraintStart_toStartOf="@id/btnSleet"
+                        app:layout_constraintTop_toBottomOf="@id/btnSleet" />
+
+                    <SeekBar
+                        android:id="@+id/sbStream"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:max="100"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="6dp"
+                        android:progress="50"
+                        app:layout_constraintEnd_toEndOf="@id/btnStream"
+                        app:layout_constraintStart_toStartOf="@id/btnStream"
+                        app:layout_constraintTop_toBottomOf="@id/btnStream" />
+
+                    <SeekBar
+                        android:id="@+id/sbThunder"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:max="100"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="6dp"
+                        android:progress="50"
+                        app:layout_constraintEnd_toEndOf="@id/btnThunder"
+                        app:layout_constraintStart_toStartOf="@id/btnThunder"
+                        app:layout_constraintTop_toBottomOf="@id/btnThunder" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutPlayControl"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@color/primaryDarkColor"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:textAlignment="textEnd"
+                    android:textSize="20sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/sbAllVolume" />
+
+                <SeekBar
+                    android:id="@+id/sbAllVolume"
+                    android:layout_width="175dp"
+                    android:layout_height="wrap_content"
+                    android:max="100"
+                    android:progress="25"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+"
+                    android:textSize="20sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/sbAllVolume" />
+
+                <Button
+                    android:id="@+id/btnPlayStop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/play"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/sbAllVolume" />
+
+                <!--<com.google.android.exoplayer2.ui.PlayerView
+                    android:id="@+id/video_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:show_timeout="10000"
+                    app:fastforward_increment="30000"
+                    app:rewind_increment="30000"/>-->
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</layout>

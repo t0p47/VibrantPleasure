@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/autoModeFragment">
+    <fragment
+        android:id="@+id/autoModeFragment"
+        android:name="com.t0p47.vibrantpleasure.view.auto_mode.AutoModeFragment"
+        android:label="Автоматическое" />
+    <fragment
+        android:id="@+id/manualFragment"
+        android:name="com.t0p47.vibrantpleasure.view.manual_mode.ManualFragment"
+        android:label="Ручное" />
+    <fragment
+        android:id="@+id/adsFragment"
+        android:name="com.t0p47.vibrantpleasure.view.ads.AdsFragment"
+        android:label="Настройки" />
+    <fragment
+        android:id="@+id/audioFragment"
+        android:name="com.t0p47.vibrantpleasure.view.audio.AudioFragment"
+        android:label="Музыка" />
+</navigation>

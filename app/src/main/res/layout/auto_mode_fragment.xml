@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="isManual"
+            type="Boolean" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+        android:background="@drawable/bg_gradient"
+            tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/tvVibroTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/thousand_half_ms"
+            android:text="Длительность вибрации: 1500 мс"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <SeekBar
+            android:id="@+id/seekBarVibroTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="3000"
+            android:progress="1500"
+            android:min="10"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/tvVibroTime"/>
+
+        <TextView
+            android:id="@+id/tvWaitTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/thousand_half_ms"
+            android:text="Длительность паузы: 1500 мс"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/seekBarVibroTime"/>
+
+        <SeekBar
+            android:id="@+id/seekBarWaitTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="3000"
+            android:progress="1500"
+            android:min="10"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/tvWaitTime"/>
+
+
+        <TextView
+            android:id="@+id/tvForce"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/thousand_half_ms"
+            android:text="Интенсивность: 1500 мс"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/seekBarWaitTime"/>
+
+        <SeekBar
+            android:id="@+id/seekBarForce"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="3000"
+            android:progress="1500"
+            android:min="10"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/tvForce"/>
+
+        <TextView
+            android:id="@+id/tvVibroTimeSlider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/thousand_half_ms"
+            android:text="@string/auto_vibro_time_placeholder"
+            android:textSize="20sp"
+            android:visibility="@{isManual ? View.VISIBLE : View.GONE}"
+            app:layout_constraintTop_toBottomOf="@+id/seekBarForce"/>
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/sliderVibroTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:valueFrom="0"
+            android:valueTo="3000"
+            android:visibility="@{isManual ? View.VISIBLE : View.GONE}"
+            app:layout_constraintTop_toBottomOf="@id/tvVibroTimeSlider"/>
+
+        <TextView
+            android:id="@+id/tvPauseTimeSlider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/thousand_half_ms"
+            android:text="@string/auto_pause_time_placeholder"
+            android:textSize="20sp"
+            android:visibility="@{isManual ? View.VISIBLE : View.GONE}"
+            app:layout_constraintTop_toBottomOf="@id/sliderVibroTime"/>
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/sliderPauseTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:valueFrom="0"
+            android:valueTo="3000"
+            android:visibility="@{isManual ? View.VISIBLE : View.GONE}"
+            app:layout_constraintTop_toBottomOf="@id/tvPauseTimeSlider"/>
+
+
+
+
+
+
+        <ImageButton
+                android:id="@+id/btnStartStop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="126dp"
+                android:src="@drawable/start_stop_selector"
+                android:background="@null"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageButton
+                android:id="@+id/btnWeakToStrong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/weak_to_strong_selector"
+                android:background="@null"
+                app:layout_constraintBottom_toTopOf="@+id/viewMiddle"
+                app:layout_constraintEnd_toStartOf="@+id/btnStartStop"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageButton
+                android:id="@+id/btnNormal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/normal_selector"
+                android:background="@null"
+                app:layout_constraintEnd_toStartOf="@+id/btnStartStop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewMiddle" />
+
+        <ImageButton
+                android:id="@+id/btnStrongToWeak"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/strong_to_weak_selector"
+                android:background="@null"
+                app:layout_constraintBottom_toTopOf="@+id/viewMiddle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btnStartStop" />
+
+        <ImageButton
+                android:id="@+id/btnRandom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/random_selector"
+                android:background="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btnStartStop"
+                app:layout_constraintTop_toBottomOf="@+id/viewMiddle" />
+
+        <ImageView
+                android:id="@+id/viewMiddle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/btnStartStop"
+                app:layout_constraintEnd_toEndOf="@+id/btnStartStop"
+                app:layout_constraintStart_toStartOf="@+id/btnStartStop"
+                app:layout_constraintTop_toTopOf="@+id/btnStartStop"
+                android:visibility="gone"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

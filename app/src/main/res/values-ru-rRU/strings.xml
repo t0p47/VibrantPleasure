@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="send_to">Отправить в</string>
+
+    <string name="play">Play</string>
+
+    <string name="start">Старт</string>
+    <string name="stop">Стоп</string>
+
+    <string name="change_day_night">Сменить тему</string>
+    <string name="share">Поделиться</string>
+    <string name="rating_review">Рейтинг/Обзор</string>
+    <string name="contact_email">Служба поддержки</string>
+    <string name="buy_pro_version">Обновить - убрать рекламу</string>
+
+    <string name="email_contact_subject">Поддержка приложения Android</string>
+    <string name="email_contact_enter_text">Введите текст</string>
+    <string name="email_contact_android_send">Отправлено с Android</string>
+
+    <string name="thousand_half_ms">1500 мс</string>
+
+    <string name="auto_vibro_time">Длительность вибрации: %d мс</string>
+    <string name="auto_pause_time">Длительность паузы: %d мс</string>
+
+    <string name="auto_vibro_time_placeholder">Длительность вибрации: 1500 мс</string>
+    <string name="auto_pause_time_placeholder">Длительность паузы: 1500 мс</string>
+
+    <string name="manual_vibro_time">Вибрация: %d мс</string>
+    <string name="manual_pause_time">Пауза: %d мс</string>
+
+    <string name="manual_vibro_time_placeholder">Вибрация: 1500 мс</string>
+    <string name="manual_pause_time_placeholder">Пауза: 1500 мс</string>
+</resources>

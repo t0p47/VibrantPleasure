@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name" translatable="false">ВибратоМассаж</string>
+    <string name="send_to">Send to</string>
+
+    <string name="play">Play</string>
+
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="stop_en" translatable="false">Stop</string>
+
+    <string name="change_day_night">Change theme</string>
+    <string name="share">Share</string>
+    <string name="rating_review">Rating/Review</string>
+    <string name="contact_email">Contact us</string>
+    <string name="buy_pro_version">Upgrade - remove ads</string>
+
+    <string name="email_contact_subject">Android app support</string>
+    <string name="email_contact_enter_text">Enter text</string>
+    <string name="email_contact_android_send">Sended from Android</string>
+
+    <string name="thousand_half_ms">1500 ms</string>
+
+    <string name="auto_vibro_time">Vibro time: %d ms</string>
+    <string name="auto_pause_time">Pause time: %d ms</string>
+
+    <string name="auto_vibro_time_placeholder">Vibro time: 1500 ms</string>
+    <string name="auto_pause_time_placeholder">Pause time: 1500 ms</string>
+
+    <string name="manual_vibro_time">Vibration: %d ms</string>
+    <string name="manual_pause_time">Pause: %d ms</string>
+
+    <string name="manual_vibro_time_placeholder">Vibration: 1500 ms</string>
+    <string name="manual_pause_time_placeholder">Pause: 1500 ms</string>
+
+</resources>
